@@ -1,8 +1,6 @@
-// import React, {Component} from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-
 import Photo from './Photo';
 
 function PhotoWall(props) {
@@ -13,14 +11,13 @@ function PhotoWall(props) {
                     .sort(function(x,y){
                         return y.id - x.id
                     })
-                    .map((post, index) => <Photo key={index} post={post} onRemovePhoto={props.onRemovePhoto}/>)}
+                    .map((post, index) => <Photo key={index} post={post} {...props} index={index}/>)}
                 </div>
             </div>
 }
 
 PhotoWall.prototype = {
-    posts: PropTypes.array.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    posts: PropTypes.array.isRequired
 }
 
 export default PhotoWall;
