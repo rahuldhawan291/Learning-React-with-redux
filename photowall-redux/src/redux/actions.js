@@ -10,11 +10,9 @@ export function removePost(index) {
 }
 
 // Adding post
-export function addPost(index, imageLink, description) {
+export function addPost(post) {
     return {
         type: 'ADD_POST',
-        index,
-        imageLink,
-        description
+        post
     };
 }
